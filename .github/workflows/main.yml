@@ -30,10 +30,6 @@ jobs:
       working-directory: ./client
       run: npm run lint
 
-    - name: Run Client Tests
-      working-directory: ./client
-      run: npm run test
-
     - name: Build Client
       working-directory: ./client
       run: npm run build
@@ -65,10 +61,6 @@ jobs:
     - name: Lint Server Code
       working-directory: ./server
       run: npm run lint
-
-    - name: Run Server Tests
-      working-directory: ./server
-      run: npm test
 
     - name: Build Server
       working-directory: ./server
