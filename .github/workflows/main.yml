@@ -32,7 +32,7 @@ jobs:
 
     - name: Run Client Tests
       working-directory: ./client
-      run: npm test
+      run: npm run test
 
     - name: Build Client
       working-directory: ./client
