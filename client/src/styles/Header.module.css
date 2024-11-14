@@ -1,0 +1,44 @@
+
+
+.image {
+  background-image: url("../assets/Background.jpg");
+  width: auto;
+  height: 60rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.deco {
+  background-image: url("../assets/Deco.jpg");
+  width: 100%;
+  height: 5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nav {
+  position: relative;
+    width: 100%;
+    transform: translateY(30%);
+
+}
+
+.title {
+
+  width: 25%;
+  margin: 15rem;
+}
+.title p {
+  font-family: "Cairo", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
