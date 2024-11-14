@@ -5,7 +5,7 @@ import Header1 from "@/components/Header_1";
 import Success from "@/components/Success";
 import { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
@@ -95,4 +95,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
