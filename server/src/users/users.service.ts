@@ -119,11 +119,8 @@ export class UsersService {
   }
 
   async resetPassword(token: string, newPassword: string) {
-    console.log(newPassword);
-    console.log(token);
-    let decodedToken;
     try {
-      decodedToken = this.jwtService.verify(token, {
+      this.jwtService.verify(token, {
         secret: process.env.JWT_SECRET,
       });
     } catch {

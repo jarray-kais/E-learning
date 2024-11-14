@@ -1,7 +1,7 @@
 import Header1 from '@/components/Header_1'
 import Signup from './Signup'
 
-const page = () => {
+const Page = () => {
   return (
     <div style={{height : "75vh"}}>
         <Header1 />
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
