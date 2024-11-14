@@ -65,12 +65,3 @@ jobs:
     - name: Build Server
       working-directory: ./server
       run: npm run build
-
-    - name: Deploy to Server Host
-      env:
-        SERVER_HOST: ${{ secrets.SERVER_HOST }}
-        SERVER_USER: ${{ secrets.SERVER_USER }}
-        SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-      run: |
-        echo "Deploying server files..."
-        # Ajouter ici les commandes spécifiques pour déployer l'application Nest.js.
