@@ -1,3 +1,4 @@
+
 const API = "http://localhost:5000/api/";
 export async function forgotPassword({email}) {
     console.log({email});

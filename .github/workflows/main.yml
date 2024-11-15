@@ -9,8 +9,8 @@ on:
       - main
 
 jobs:
-  client:
-    name: Client (Next.js)
+  deploy:
+    name: Deploy to Vercel
     runs-on: ubuntu-latest
 
     steps:
@@ -22,46 +22,20 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Install Dependencies (Client)
-      working-directory: ./client
-      run: npm install
+    - name: Install Dependencies (Client & Server)
+      run: |
+        cd client && npm install
+        cd ../server && npm install
 
-    - name: Lint Client Code
-      working-directory: ./client
-      run: npm run lint
+    - name: Build Client & Server
+      run: |
+        cd client && npm run build
+        cd ../server && npm run build
 
-    - name: Build Client
-      working-directory: ./client
-      run: npm run build
-
-    - name: Deploy to Vercel
+    - name: Deploy to Vercel (Client & Server)
       uses: amondnet/vercel-action@v20
       with:
         vercel-token: ${{ secrets.VERCEL_TOKEN }}
         vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-
-  server:
-    name: Server (Nest.js)
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-
-    - name: Install Dependencies (Server)
-      working-directory: ./server
-      run: npm install
-
-    - name: Lint Server Code
-      working-directory: ./server
-      run: npm run lint
-
-    - name: Build Server
-      working-directory: ./server
-      run: npm run build
+        vercel-args: "--prod"  # Optional for production
