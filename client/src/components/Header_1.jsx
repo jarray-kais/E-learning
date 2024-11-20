@@ -11,18 +11,6 @@ const Header1 = () => {
               </Link>
             </div>
             <div className="flex-none gap-2">
-              <Link href="#main-feature"  className="btn btn-ghost text-xl">
-                Main Feature
-              </Link>
-              <Link href="#Explore" className="btn btn-ghost text-xl">
-               Explore
-              </Link>
-              <Link href="#courses" className="btn btn-ghost text-xl">
-                courses
-              </Link>
-              <Link href="" className="btn btn-ghost text-xl">
-                Blog
-              </Link>
               <Link href="" className="btn btn-ghost text-xl">
                 Contact
               </Link>

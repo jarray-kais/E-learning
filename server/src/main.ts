@@ -1,11 +1,19 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import * as express from 'express';
+
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const server = express();
+  const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
   app.enableCors();
   app.setGlobalPrefix('api');
-  const port = process.env.PORT;
-  await app.listen(port);
-  console.log(`Application is running on port ${port}`);
+  await app.init();
+
+  // Export the server for Vercel
+  return server;
 }
-bootstrap();
+
+bootstrap().then((server) => {
+  module.exports = server;
+});
