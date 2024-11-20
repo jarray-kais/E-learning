@@ -28,12 +28,12 @@ jobs:
     - name: Install Dependencies (Client & Server)
       run: |
         cd client && npm install
-        cd server && npm install
+        cd ../server && npm install
 
     - name: Build Client & Server
       run: |
         cd client && npm run build
-        cd server && npm run build
+        cd ../server && npm run build
 
     - name: Deploy to Vercel (Client & Server)
       uses: amondnet/vercel-action@v20
