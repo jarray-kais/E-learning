@@ -34,9 +34,9 @@ const Page = () => {
         }, 2000);
       }
     } catch (error) {
-      console.log("Signup error:", error.message);
+      console.log("sign in error:", error.message);
       setError(
-        error.response?.data?.message || "An error occurred during signup."
+        error.response?.data?.message || "An error occurred during sign in."
       );
     } finally {
       setPending(false);

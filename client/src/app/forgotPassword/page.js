@@ -25,9 +25,9 @@ const Page = () => {
         setSuccess(result.message);
       }
     } catch (error) {
-      console.log("Signup error:", error.message);
+      console.log("error:", error.message);
       setError(
-        error.response?.data?.message || "An error occurred during signup."
+        error.response?.data?.message || "An error occurred during sending email."
       );
     } finally {
       setPending(false);
